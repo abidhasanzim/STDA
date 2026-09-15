@@ -1,0 +1,14 @@
+# Square pulse added to the three body-acceleration channels.
+name: patch
+family: patch
+channels: [0, 1, 2]
+t_start: 100
+t_len: 10
+amplitude: 3.0           # per-channel source std
+pattern: square
+mode: add
+scale_mode: std
+
+target_class: 0          # WALKING
+poison_rate: 0.15        # fraction of non-target-class source training windows
+seed: 42

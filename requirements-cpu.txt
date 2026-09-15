@@ -1,0 +1,13 @@
+# CPU-only install (used by CI).
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.6.0
+numpy==2.0.2
+scikit-learn==1.8.0
+PyYAML==6.0.2
+matplotlib==3.10.1
+mlflow==3.16.0
+pandas==2.2.3
+streamlit==1.62.0
+pytest==9.1.1
+ruff==0.16.6

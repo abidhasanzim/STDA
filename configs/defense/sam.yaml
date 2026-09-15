@@ -1,0 +1,9 @@
+# E9: FT-SAM-style sharpness-aware minimization on the adaptation loss.
+name: sam
+compress: false
+knowledge_transfer: false
+spectral_weight: 0.0
+
+sam_rho: 4.0
+sam_adaptive: true     # ASAM: perturbation scaled by |w|
+sam_base: adam

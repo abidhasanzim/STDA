@@ -1,0 +1,23 @@
+# Target adaptation (MAPU hyperparameters for HAR).
+epochs: 100
+batch_size: 32
+learning_rate: 1.0e-4
+weight_decay: 1.0e-4
+step_size: 50
+lr_decay: 0.5
+seed: 42
+device: cuda
+log_every: 20
+
+method: mapu              # mapu | shot | none
+ent_loss_wt: 0.05897
+im: 0.2759
+tov_wt: 0.5
+
+num_splits: 8
+num_masked: 1
+
+data: configs/data/har.yaml
+model: configs/model/cnn.yaml
+out_dir: checkpoints
+mlflow_experiment: sfda-audit

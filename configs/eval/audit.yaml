@@ -1,0 +1,12 @@
+# Trigger families to test and verdict thresholds (on the worst-family ASR).
+triggers:
+  - configs/attack/patch.yaml
+  - configs/attack/freq.yaml
+  - configs/attack/gaussian.yaml
+
+target_class: 0
+bootstrap_n: 1000
+
+thresholds:
+  fail_above: 0.5
+  warn_above: 0.2

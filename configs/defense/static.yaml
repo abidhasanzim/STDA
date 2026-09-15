@@ -1,0 +1,9 @@
+# E5: static channel compression only.
+name: compress-only
+compress: true
+scorer: spectral
+gamma: 1.0            # zero channels above mean + gamma * std of the layer's scores
+k: null               # set k to use top-k selection instead
+knowledge_transfer: false
+spectral_weight: 0.0
+rezero: false

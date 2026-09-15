@@ -1,0 +1,15 @@
+# E10: E8 plus knowledge transfer from an uncompressed adapted model. Chosen on the
+# development pairs by scripts/select_defense.py.
+name: compress+consistency+kt
+compress: true
+knowledge_transfer: true
+spectral_weight: 0.0
+consistency_wt: 0.1
+cons_feature_wt: 1.0
+cons_pred_wt: 0.0
+cons_amp_range: [0.1, 1.5]
+cons_width_range: [0.05, 0.3]
+cons_families: [patch, sinusoid, noise_segment]
+scorer: spectral
+gamma: null
+k: 16

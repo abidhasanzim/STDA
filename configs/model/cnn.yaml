@@ -1,0 +1,13 @@
+# AdaTime 1D CNN settings for UCI HAR, taken from the MAPU code release.
+name: cnn1d
+in_channels: 9
+mid_channels: 64
+final_out_channels: 128
+kernel_size: 5        # first block; the other blocks use 8
+stride: 1
+dropout: 0.5
+features_len: 1
+
+ar_hid_dim: 128
+imputer_cell: lstm
+imputer_legacy_view: false

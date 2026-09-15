@@ -1,0 +1,13 @@
+# 10 Hz sinusoid on every channel for the whole window.
+name: freq
+family: freq
+channels: all
+freq_hz: 10.0
+fs: 50.0
+amplitude: 0.25          # per-channel source std
+phase: 0.0
+scale_mode: std
+
+target_class: 0          # WALKING
+poison_rate: 0.10
+seed: 42

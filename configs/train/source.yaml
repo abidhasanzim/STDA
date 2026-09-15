@@ -1,0 +1,19 @@
+# Source model and imputer pretraining (MAPU hyperparameters for HAR).
+epochs: 100
+batch_size: 32
+pre_learning_rate: 1.0e-3
+weight_decay: 1.0e-4
+optimizer: adam
+label_smoothing: 0.1
+seed: 42
+device: cuda
+log_every: 20
+
+num_splits: 8
+num_masked: 1
+detach_clean_target: true
+
+data: configs/data/har.yaml
+model: configs/model/cnn.yaml
+out_dir: checkpoints
+mlflow_experiment: sfda-audit

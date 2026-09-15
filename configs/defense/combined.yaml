@@ -1,0 +1,14 @@
+# E8: channel compression (top-16 per layer) + perturbation consistency. Recommended.
+name: compress+consistency
+compress: true
+knowledge_transfer: false
+spectral_weight: 0.0
+consistency_wt: 0.1
+cons_feature_wt: 1.0
+cons_pred_wt: 0.0
+cons_amp_range: [0.1, 1.5]
+cons_width_range: [0.05, 0.3]
+cons_families: [patch, sinusoid, noise_segment]
+scorer: spectral
+gamma: null
+k: 16

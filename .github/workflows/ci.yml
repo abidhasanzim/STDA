@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install (CPU torch)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-cpu.txt
+          pip install -e . --no-deps
+
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Fast tests
+        env:
+          SFDA_NO_TRACKING: "1"
+        run: pytest -q -m fast
+
+      - name: Headline tables match results
+        run: |
+          python scripts/write_headline_table.py --check README.md docs/report.md
+          python scripts/write_headline_table.py --runs results/test_runs.jsonl --summary \
+            --marker test-summary --check README.md docs/report.md
+          python scripts/write_headline_table.py --runs results/dev_runs.jsonl --summary \
+            --marker dev-summary --check docs/report.md
+          python scripts/select_defense.py --check
+          python scripts/ablate_consistency_band.py --check
+
+      - name: Smoke test
+        env:
+          SFDA_NO_TRACKING: "1"
+        run: python scripts/smoke_e2e.py

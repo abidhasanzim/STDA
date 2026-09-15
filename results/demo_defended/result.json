@@ -1,0 +1,287 @@
+{
+  "exp_id": "audit",
+  "dataset": "har",
+  "source": "2",
+  "target": "11",
+  "model_type": "unknown",
+  "adaptation": "mapu",
+  "defense": "combined",
+  "seed": 42,
+  "clean_acc": 1.0,
+  "clean_mf1": 1.0,
+  "clean_acc_ci": [
+    1.0,
+    1.0
+  ],
+  "n_clean": 86,
+  "asr": {
+    "patch": {
+      "name": "patch",
+      "family": "temporal",
+      "asr": 0.0,
+      "asr_ci": [
+        0.0,
+        0.0
+      ],
+      "asr_inclusive": 0.1744186046511628,
+      "clean_target_rate": 0.0,
+      "lift": 0.0,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 2.3624675273895264,
+        "linf": 0.5465837121009827,
+        "relative_l2": 0.20364320278167725,
+        "relative_range": 0.49983125925064087,
+        "frac_elements_touched": 0.02604166604578495
+      },
+      "config": {
+        "name": "patch",
+        "family": "temporal",
+        "channels": [
+          0,
+          1,
+          2
+        ],
+        "t_start": 100,
+        "t_len": 10,
+        "amplitude": 3.0,
+        "pattern": "square",
+        "mode": "add",
+        "scale_mode": "std"
+      }
+    },
+    "freq": {
+      "name": "freq",
+      "family": "frequency",
+      "asr": 0.0,
+      "asr_ci": [
+        0.0,
+        0.0
+      ],
+      "asr_inclusive": 0.1744186046511628,
+      "clean_target_rate": 0.0,
+      "lift": 0.0,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 1.8016557693481445,
+        "linf": 0.10184716433286667,
+        "relative_l2": 0.15530160069465637,
+        "relative_range": 0.09313559532165527,
+        "frac_elements_touched": 0.9838053584098816
+      },
+      "config": {
+        "name": "freq",
+        "family": "frequency",
+        "channels": "all",
+        "freq_hz": 10.0,
+        "wavelength_samples": 5.0,
+        "amplitude": 0.25,
+        "fs": 50.0,
+        "scale_mode": "std"
+      }
+    },
+    "gaussian": {
+      "name": "gaussian",
+      "family": "temporal",
+      "asr": 0.0,
+      "asr_ci": [
+        0.0,
+        0.0
+      ],
+      "asr_inclusive": 0.1744186046511628,
+      "clean_target_rate": 0.0,
+      "lift": 0.0,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 4.09890079498291,
+        "linf": 0.9954854846000671,
+        "relative_l2": 0.35316866636276245,
+        "relative_range": 0.9083097577095032,
+        "frac_elements_touched": 0.125
+      },
+      "config": {
+        "name": "gaussian",
+        "family": "temporal",
+        "channels": "all",
+        "t_start": 96,
+        "t_len": 16,
+        "amplitude": 0.5,
+        "pattern": "gaussian",
+        "mode": "replace",
+        "scale_mode": "range"
+      }
+    }
+  },
+  "target_class": 0,
+  "attack_family": "",
+  "source_clean_acc": null,
+  "source_asr": {},
+  "defense_info": {
+    "compress": true,
+    "knowledge_transfer": false,
+    "spectral_weight": 0.0,
+    "spectral_mode": "trace",
+    "rezero": false,
+    "gamma": null,
+    "k": 16,
+    "consistency_wt": 0.1,
+    "cons_feature_wt": 1.0,
+    "cons_pred_wt": 0.0,
+    "cons_amp_range": [
+      0.1,
+      1.5
+    ],
+    "cons_width_range": [
+      0.05,
+      0.3
+    ],
+    "cons_families": [
+      "patch",
+      "sinusoid",
+      "noise_segment"
+    ],
+    "n_zeroed": 48,
+    "zeroed_per_layer": {
+      "0": 16,
+      "1": 16,
+      "2": 16
+    },
+    "compressed_channel_absmean_final": 0.0
+  },
+  "config_hash": "69a85a70fc77",
+  "duration_s": 0.019558191299438477,
+  "notes": "",
+  "verdict": {
+    "label": "PASS",
+    "worst_trigger": "patch",
+    "worst_asr": 0.0,
+    "thresholds": {
+      "fail_above": 0.5,
+      "warn_above": 0.2
+    },
+    "rationale": "worst-family ASR 0.0% is at or below the warn threshold of 20% and does not exceed the untriggered target rate of 0.0%"
+  },
+  "before_adaptation": {
+    "exp_id": "audit",
+    "dataset": "har",
+    "source": "2",
+    "target": "11",
+    "model_type": "unknown",
+    "adaptation": "none",
+    "defense": "none",
+    "seed": 42,
+    "clean_acc": 0.8372093023255814,
+    "clean_mf1": 0.7496718335428013,
+    "clean_acc_ci": [
+      0.7558139534883721,
+      0.9186046511627907
+    ],
+    "n_clean": 86,
+    "asr": {
+      "patch": {
+        "name": "patch",
+        "family": "temporal",
+        "asr": 0.23943661971830985,
+        "asr_ci": [
+          0.14084507042253522,
+          0.3380281690140845
+        ],
+        "asr_inclusive": 0.37209302325581395,
+        "clean_target_rate": 0.04225352112676056,
+        "lift": 0.19718309859154928,
+        "n_eligible": 71,
+        "stealth": {
+          "l2": 2.3624675273895264,
+          "linf": 0.5465837121009827,
+          "relative_l2": 0.20364320278167725,
+          "relative_range": 0.49983125925064087,
+          "frac_elements_touched": 0.02604166604578495
+        },
+        "config": {
+          "name": "patch",
+          "family": "temporal",
+          "channels": [
+            0,
+            1,
+            2
+          ],
+          "t_start": 100,
+          "t_len": 10,
+          "amplitude": 3.0,
+          "pattern": "square",
+          "mode": "add",
+          "scale_mode": "std"
+        }
+      },
+      "freq": {
+        "name": "freq",
+        "family": "frequency",
+        "asr": 1.0,
+        "asr_ci": [
+          1.0,
+          1.0
+        ],
+        "asr_inclusive": 1.0,
+        "clean_target_rate": 0.04225352112676056,
+        "lift": 0.9577464788732395,
+        "n_eligible": 71,
+        "stealth": {
+          "l2": 1.8016557693481445,
+          "linf": 0.10184716433286667,
+          "relative_l2": 0.15530160069465637,
+          "relative_range": 0.09313559532165527,
+          "frac_elements_touched": 0.9838053584098816
+        },
+        "config": {
+          "name": "freq",
+          "family": "frequency",
+          "channels": "all",
+          "freq_hz": 10.0,
+          "wavelength_samples": 5.0,
+          "amplitude": 0.25,
+          "fs": 50.0,
+          "scale_mode": "std"
+        }
+      },
+      "gaussian": {
+        "name": "gaussian",
+        "family": "temporal",
+        "asr": 0.323943661971831,
+        "asr_ci": [
+          0.2112676056338028,
+          0.43661971830985913
+        ],
+        "asr_inclusive": 0.4418604651162791,
+        "clean_target_rate": 0.04225352112676056,
+        "lift": 0.28169014084507044,
+        "n_eligible": 71,
+        "stealth": {
+          "l2": 4.09890079498291,
+          "linf": 0.9954854846000671,
+          "relative_l2": 0.35316866636276245,
+          "relative_range": 0.9083097577095032,
+          "frac_elements_touched": 0.125
+        },
+        "config": {
+          "name": "gaussian",
+          "family": "temporal",
+          "channels": "all",
+          "t_start": 96,
+          "t_len": 16,
+          "amplitude": 0.5,
+          "pattern": "gaussian",
+          "mode": "replace",
+          "scale_mode": "range"
+        }
+      }
+    },
+    "target_class": 0,
+    "attack_family": "",
+    "source_clean_acc": null,
+    "source_asr": {},
+    "defense_info": {},
+    "config_hash": "0d612d15b172",
+    "duration_s": 0.16581106185913086,
+    "notes": ""
+  }
+}

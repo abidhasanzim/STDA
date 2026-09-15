@@ -1,0 +1,11 @@
+# E6: SSDA-style defense (compression + knowledge transfer + spectral penalty).
+# SSDA uses lambda=100; on this encoder that restores the backdoor, so lambda=1 is used.
+name: secure-mapu
+compress: true
+scorer: spectral
+gamma: 1.0
+k: null
+knowledge_transfer: true
+spectral_mode: trace      # trace (SSDA) or exact
+rezero: false
+spectral_weight: 1.0

@@ -1,0 +1,133 @@
+{
+  "exp_id": "audit",
+  "dataset": "har",
+  "source": "2",
+  "target": "11",
+  "model_type": "unknown",
+  "adaptation": "none",
+  "defense": "none",
+  "seed": 42,
+  "clean_acc": 0.8255813953488372,
+  "clean_mf1": 0.7404040404040404,
+  "clean_acc_ci": [
+    0.7441860465116279,
+    0.8953488372093024
+  ],
+  "n_clean": 86,
+  "asr": {
+    "patch": {
+      "name": "patch",
+      "family": "temporal",
+      "asr": 1.0,
+      "asr_ci": [
+        1.0,
+        1.0
+      ],
+      "asr_inclusive": 1.0,
+      "clean_target_rate": 0.04225352112676056,
+      "lift": 0.9577464788732395,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 2.3624675273895264,
+        "linf": 0.5465837121009827,
+        "relative_l2": 0.20364320278167725,
+        "relative_range": 0.49983125925064087,
+        "frac_elements_touched": 0.02604166604578495
+      },
+      "config": {
+        "name": "patch",
+        "family": "temporal",
+        "channels": [
+          0,
+          1,
+          2
+        ],
+        "t_start": 100,
+        "t_len": 10,
+        "amplitude": 3.0,
+        "pattern": "square",
+        "mode": "add",
+        "scale_mode": "std"
+      }
+    },
+    "freq": {
+      "name": "freq",
+      "family": "frequency",
+      "asr": 0.04225352112676056,
+      "asr_ci": [
+        0.0,
+        0.08450704225352113
+      ],
+      "asr_inclusive": 0.20930232558139536,
+      "clean_target_rate": 0.04225352112676056,
+      "lift": 0.0,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 1.8016557693481445,
+        "linf": 0.10184716433286667,
+        "relative_l2": 0.15530160069465637,
+        "relative_range": 0.09313559532165527,
+        "frac_elements_touched": 0.9838053584098816
+      },
+      "config": {
+        "name": "freq",
+        "family": "frequency",
+        "channels": "all",
+        "freq_hz": 10.0,
+        "wavelength_samples": 5.0,
+        "amplitude": 0.25,
+        "fs": 50.0,
+        "scale_mode": "std"
+      }
+    },
+    "gaussian": {
+      "name": "gaussian",
+      "family": "temporal",
+      "asr": 0.07042253521126761,
+      "asr_ci": [
+        0.014084507042253521,
+        0.1267605633802817
+      ],
+      "asr_inclusive": 0.23255813953488372,
+      "clean_target_rate": 0.04225352112676056,
+      "lift": 0.028169014084507046,
+      "n_eligible": 71,
+      "stealth": {
+        "l2": 4.09890079498291,
+        "linf": 0.9954854846000671,
+        "relative_l2": 0.35316866636276245,
+        "relative_range": 0.9083097577095032,
+        "frac_elements_touched": 0.125
+      },
+      "config": {
+        "name": "gaussian",
+        "family": "temporal",
+        "channels": "all",
+        "t_start": 96,
+        "t_len": 16,
+        "amplitude": 0.5,
+        "pattern": "gaussian",
+        "mode": "replace",
+        "scale_mode": "range"
+      }
+    }
+  },
+  "target_class": 0,
+  "attack_family": "",
+  "source_clean_acc": null,
+  "source_asr": {},
+  "defense_info": {},
+  "config_hash": "efba8f977571",
+  "duration_s": 0.16990208625793457,
+  "notes": "",
+  "verdict": {
+    "label": "FAIL",
+    "worst_trigger": "patch",
+    "worst_asr": 1.0,
+    "thresholds": {
+      "fail_above": 0.5,
+      "warn_above": 0.2
+    },
+    "rationale": "worst-family ASR 100.0% exceeds the fail threshold of 50%"
+  }
+}

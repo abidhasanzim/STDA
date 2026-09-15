@@ -1,0 +1,14 @@
+# Fixed Gaussian noise segment that replaces 16 samples on every channel.
+name: gaussian
+family: patch
+channels: all
+t_start: 96
+t_len: 16
+amplitude: 0.5           # fraction of each window's peak-to-peak range
+pattern: gaussian
+mode: replace
+scale_mode: range
+seed: 42
+
+target_class: 0          # WALKING
+poison_rate: 0.15
